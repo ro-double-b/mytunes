@@ -12,11 +12,6 @@ var SongQueue = Backbone.Collection.extend({
       }
     });
 
-    this.on('enqueue', function() {
-      debugger;
-      console.log('enqueue');
-    });
-
     // Once the song has ended
     this.on('ended', function() {
       // Dequeue the song
@@ -31,7 +26,7 @@ var SongQueue = Backbone.Collection.extend({
     // When dequeue on song is called
     this.on('dequeue', function() {
       // remove song from queue
-      this.models[0].destroy();
+      this.remove(this.models[0]);
     });
 
   },
