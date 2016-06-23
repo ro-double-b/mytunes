@@ -4,7 +4,10 @@ var LibraryView = Backbone.View.extend({
   tagName: 'table',
 
   initialize: function() {
-    this.render();
+    this.render();  
+
+    // re-renders when...
+    this.on('', this.render, this);
   },
 
   render: function() {
