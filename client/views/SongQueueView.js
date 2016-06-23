@@ -2,11 +2,14 @@
 var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
-    // when song is added, re-render Song Queue view
-    // this.collection.on('add', this.render, this);
+    // renders song queue view on initialization
     this.render();
 
-    this.on('click', this.render, this);
+    // re-renders song queue view on song add
+    this.collection.on('add', this.render, this);
+
+    // re-renders song queue view on song ended
+    this.collection.on('ended', this.render, this);
   },
 
   render: function() {
