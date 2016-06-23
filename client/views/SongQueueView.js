@@ -10,6 +10,9 @@ var SongQueueView = Backbone.View.extend({
 
     // re-renders song queue view on song ended
     this.collection.on('ended', this.render, this);
+
+    // re-renders song queue view on song dequeue
+    this.collection.on('dequeue', this.render, this);
   },
 
   render: function() {
