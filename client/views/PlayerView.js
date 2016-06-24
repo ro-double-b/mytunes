@@ -13,10 +13,6 @@ var PlayerView = Backbone.View.extend({
 
   initialize: function() {
     // // does the same thing as the events above
-    // var that = this;
-    // this.$el.on('ended', function() {
-    //   that.model.ended();
-    // });
   },
 
   setSong: function(song) {

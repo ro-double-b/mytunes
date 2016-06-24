@@ -3,15 +3,12 @@ var LibraryView = Backbone.View.extend({
 
   tagName: 'table',
 
-  // events: {
-  //   'sync': function() {
-  //     this.render();
-  //   }
-  // },
-
   initialize: function() {
     this.render();  
     this.collection.on('sync', this.render, this);
+
+    // re-render library view on play count increase
+    this.collection.on('change:playCount', this.render, this);
   },
 
   render: function() {
